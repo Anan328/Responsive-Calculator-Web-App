@@ -1,0 +1,150 @@
+<!-- DOCTYPE html-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title> Calculator </title>
+<style type="text/css">
+body{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.h{
+margin-bottom:450px;
+overflow:hidden;
+text-align:center;
+text-transform:uppercase;
+font-family:sans-serif;
+color:#fff;
+font-size:1.9em;
+text-shadow: 5px 5px 5px black;
+}
+.h::before{
+content:"";
+position:absolute;
+background: #3887ef;
+background-image:linear-gradient(45deg,#ff0081,#6827b0);
+height:30%;
+width:101%;
+z-index:-1;
+border-radius: 0 0 50% 50%/ 0 0 100% 100%;
+transform:scaleX(1.2);
+left:0;
+top:0;
+}
+.h:hover{
+color:black;
+text-shadow: 2px 2px 2px #fff;
+
+}
+.container{
+position:absolute;
+margin-top:100px;
+margin-left:50px;
+}
+input{
+background:none;
+padding:17px;
+font-family:cursive;
+font-size:22px;
+margin-right:5px;
+}
+.text{
+border:2px solid white;
+border-radius:22px;
+height:20%;
+width:50%;
+line-spacing:5px;
+background:#deeaf8;
+}
+.button{
+border:2px solid white;
+border-radius:50%;
+width:64px;
+height:67px;
+background:#deeaf8;
+}
+.color1{
+background:#8338ea;
+}
+.color2{
+background:#6dc888;
+}
+.color3{
+background:#fb5507;
+}
+.color4{
+background: #ff006c;
+}
+.color5{
+background:#3887ef;
+}
+.color6{
+background:#41B3A3;
+}
+@media screen and (max-width: 500px){
+.button{
+width:45px;
+height:55px;
+}
+.text{
+width:45%;
+}
+::placeholder{
+font-size:14px;
+}
+.h{
+font-size:10px;
+}
+.h::before{
+transform:scaleX(1.9);
+}
+}
+@media screen and (max-width: 320px){
+.text{
+width:65%;
+}
+}
+</style>
+</head>
+<body>
+<div class="h">
+<h2 > calculator created by ANAN </h2>
+<h5 >(using html/css/javascript) </h5>
+</div>
+<div class="container">
+<form name="calculator"method="post">
+<input type="text" name="show" value="" placeholder="Enter Any Expr" class="text"></input>
+<a href="calculator.html">
+<input type="button" name="btnc" value="C" class="button color3"><!--onclick="location.reload()"--></input>
+</a>
+<br>
+<input type="button" name="btn7" value="7" onclick="calculate(7)" class="button"></input>
+<input type="button" name="btn8" value="8" onclick="calculate(8)" class="button"></input>
+<input type="button" name="btn9" value="9" onclick="calculate(9)" class="button"></input>
+<input type="button" name="btndiv" value="/" onclick="calculate(btndiv.value)" class="button color1"></input>
+<br>
+<input type="button" name="btn4" value="4" onclick="calculate(4)" class="button"></input>
+<input type="button" name="btn5" value="5" onclick="calculate(5)" class="button"></input>
+<input type="button" name="btn6" value="6" onclick="calculate(6)" class="button"></input>
+<input type="button" name="btnmul" value="*" onclick="calculate(btnmul.value)" class="button color5"></input>
+<br>
+<input type="button" name="btn1" value="1" onclick="calculate(1)" class="button"></input>
+<input type="button" name="btn2" value="2" onclick="calculate(2)" class="button"></input>
+<input type="button" name="btn3" value="3" onclick="calculate(3)" class="button"></input>
+<input type="button" name="btnadd" value="+" onclick="calculate(btnadd.value)" class="button color2"></input>
+<br>
+<input type="button" name="btn0" value="0" onclick="calculate(0)" class="button"></input>
+<input type="button" name="btndot" value="." onclick="calculate(btndot.value)" class="button color4"></input>
+<input type="button" name="btnequal" value="=" onclick="show.value=eval(show.value)" class="button color3"></input>
+<input type="button" name="btnsub" value="-" onclick="calculate(btnsub.value)" class="button color6"></input>
+<br>
+</form>
+</div>
+<script>
+function calculate(n){
+	calculator.show.value+=n;
+}
+</script>
+</body>
+</html>
